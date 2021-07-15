@@ -4,11 +4,12 @@
     <title>LandingPage</title>
     <meta charset="UTF-8"/>
     <meta name="author" content="Christian Daniel"/>
-    <meta name="viewport" content="width=device-width, initail-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="stylesheet.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 <body>
     <section class="container">
@@ -25,13 +26,45 @@
                 <p>BLACK<br>FRIDAY</p>
             </div>
             <div class="text-box">
-                <p>Nossa loja está com <span class="text-color1">promoções!</span><br> Assine em baixo para receber <span class="text-color2">notificações!</span></p>
-            </div>
-            <div class="sign-in">
-                <input type="text" name="email-box" class="email-box" placeholder="email@email.com"></input>
-                <button type="button" class="button-box">ENVIAR</button>
+                <div class="text">
+                    <p>Nossa loja está com <span class="text-color1">promoções!</span><br> Assine em baixo para receber <span class="text-color2">notificações!</span></p>
+                </div>
+                <div class="sign-in">
+                    <input id="input-box"
+                        type="email"
+                        name="email-box"
+                        class="email-box"
+                        placeholder="email@email.com"
+                        >
+                    </input>
+                    <button
+                        id="input-button"
+                        type="button"
+                        class="button-box"
+                        >
+                        <i class="fas fa-angle-double-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
+        <button class="scroll-button"><a href="#products"><i class="fas fa-arrow-down"></i></a></button>
+        <div class="products" id="products">
+            <ul class="product-list">
+                <li><img src="out-of-stock.png">Produto fora do estoque</li>
+                <li><img src="out-of-stock.png">Produto fora do estoque</li>
+                <li><img src="out-of-stock.png">Produto fora do estoque</li>
+                <li><img src="out-of-stock.png">Produto fora do estoque</li>
+                <li><img src="out-of-stock.png">Produto fora do estoque</li>
+                <li><img src="out-of-stock.png">Produto fora do estoque</li>
+            </ul>
+        </div>
     </section>
+    <footer>
+        <ul class="footer-list">
+            <li>Desenvolvido por Christian Daniel</li>
+            <li>Todos os direitos reservados</li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

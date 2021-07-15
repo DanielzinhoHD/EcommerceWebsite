@@ -12,7 +12,11 @@
 }
 body{
     background-image: linear-gradient(to bottom, var(--green-one), var(--green-two));
+    background-attachment: fixed;
     margin: 0;
+}
+html{
+    scroll-behavior: smooth;
 }
 .header{
     background-image: linear-gradient(to bottom, var(--green-one), var(--green-two));
@@ -21,6 +25,7 @@ body{
     width: 100%;
     box-shadow: 0 1px 10px;
     position: fixed;
+    z-index: 2;
 }
 .list{
     display: flex;
@@ -32,12 +37,12 @@ body{
     font-size: 6vmin;
     list-style-type: none;
 }
-li{
+.list li{
     margin-right: 2vw;
     margin-top: 1.5vh;
     margin-bottom: 1.5vh;
 }
-li:first-child{
+.list li:first-child{
     margin-right: auto;
 }
 a{
@@ -45,18 +50,12 @@ a{
     color: inherit;
 }
 .main{
-    display: grid;
-    grid-template-columns: 10vw 35vw 10vw 30vw 5vw 10vw;
-    grid-template-rows: 20vh 25vh 20vh 5vh 5vh 25vh;
+    display: flex;
 }
 .black-friday p{
     margin: 0;
 }
 .black-friday{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 6;
     background-image: linear-gradient(var(--black), var(--gray),var(--white));
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -65,21 +64,18 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
-    margin-top: 20vh;
+    width: 50%;
+    margin: 25vh 0 0 5vw;
     font-size: 10vw;
     font-weight: 900;
     box-shadow: 0 0 50px;
     user-select: none;
 }
 .text-box{
-    grid-column-start: 4;
-    grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 3;
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 3vw;
+    margin: 25vh 5vw 0 5vw;
     text-align: center;
     user-select: none;
 }
@@ -91,10 +87,6 @@ a{
 }
 .sign-in{
     display: flex;
-    grid-column-start: 4;
-    grid-column-end: 6;
-    grid-row-start: 4;
-    grid-row-end: 6;
 }
 .email-box{
     grid-column-start: 4;
@@ -107,7 +99,7 @@ a{
     color: white;
     background: transparent;
     border-bottom: 4px white solid;
-    font-size: 25px;
+    font-size: 2vw;
     outline: none;
     transition-duration: 0.5s;
 }
@@ -117,11 +109,10 @@ a{
 }
 .button-box{
     font-family: 'Roboto', sans-serif;
-    font-size: 100%;
+    font-size: 4vw;
     cursor: pointer;
     border: 0;
     margin: 0;
-    text-decoration: none;
     background-color: transparent;
     color: rgb(255, 255, 255);
     transition-duration: 0.5s;
@@ -130,6 +121,80 @@ a{
 .button-box:hover{
     background-color: var(--purple-two);
     color: white;
+}
+.scroll-button{
+    font-size: 6vmin;
+    cursor: pointer;
+    margin-left: calc(50% - 6vmin);
+    margin-top: 10vh;
+    background-color: transparent;
+    border: 5px white solid;
+    border-radius: 100%;
+    color: white;
+    animation-name: top-bottom;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.scroll-button:hover{
+    border-color: var(--purple-two);
+    color: var(--purple-two);
+}
+@keyframes top-bottom {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(10%);
+    }
+}
+
+.products{
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vmin;
+}
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
+    max-width: 120%;
+    padding-inline-start: 0;
+}
+.product-list li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: 5px white solid;
+    border-radius: 10%;
+    margin-bottom: 40px;
+    transition: 0.2s;
+    height: 30vh;
+}
+.product-list li:hover{
+    transform:scale(1.05);
+    cursor: pointer;
+}
+.product-list img{
+    width: 300px;
+    border-radius: 10%;
+    padding-bottom: 10px;
+}
+.footer-list{
+    width: 100%;
+    color: white;
+    background-image: linear-gradient(to bottom, #15276e, #16114e);;
+    margin-bottom: 0;
+    padding: 20px 0 20px 5vw;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5vmin;
+    box-shadow: -10px 0 20px black;
 }
 @media (max-width: 700px){
     .main{
@@ -148,5 +213,6 @@ a{
     }
     .email-box{
         margin-left: 10vw;
+        font-size: 4vw;
     }
 }
